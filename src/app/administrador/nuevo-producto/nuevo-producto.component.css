@@ -1,0 +1,27 @@
+.card{
+
+    margin: 10px;
+    background-color:azure;
+    opacity: 95%;     
+
+}
+
+.card{
+
+position: relative;
+left: 300px;
+
+}
+
+.list-group-item{
+background-color: azure;
+width: 300px;
+
+
+}
+
+.botonmenu{
+    position: fixed;
+    left: 0px;
+    top: 200px;
+}
