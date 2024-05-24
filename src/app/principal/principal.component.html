@@ -31,80 +31,33 @@
     </div>
   </nav>
   <div class="carrito">
-  
+    <button routerLink="/nuevoproducto" routerLinkActive="active-link" type="button"  displa class="btn btn-secondary">Agregar Producto</button>
+
     <a routerLink="/carrito" routerLinkActive="active-link" > <img src="assets/imagenes/car.png" alt=""  width="50" height="50"> </a>
           
     </div>
 
   <div> <h1 class="text-center" >Camisetas</h1></div>
-    <span class="card" style="width: 18rem;">
-    <img src="./assets/imagenes/camiseta1.webp" alt="" width="250" height="250"> 
-        <div class="card-body">
-        <h5 class="card-title">Camiseta si mangas </h5>
-          </div>
+  
+    <span *ngFor="let item of listadeproductos ;let i=index" class="card" style="width: 18rem ">
+    <img src="./assets/imagenes/camiseta1.webp" alt="" width="200" height="250"> 
+        <div class="card-body"  class="card-title"  >
+            <div *ngIf="i === 0" class="card"> 
+            </div>   
+            <h5>{{item.nombre}}</h5>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">Talla: S</li>
-        <li class="list-group-item">Color: Azul</li>
-        <li class="list-group-item">Precio: $40.000 </li>
+        <li class="list-group-item" >Talla:{{item.talla}} </li>
+        <li class="list-group-item">Color:{{item.color}}</li>
+        <li class="list-group-item">Precio:{{item.precio}}</li>
         </ul>
         <div class="card-body">
-        <a href="#" class="card-link">Agregar </a>
-        <a href="#" class="card-link">Comprar</a>
-        </div>
-    
+        <button  (click)="eliminarProducto(item.id!)" type="button" class="btn btn-secondary btnsm-2">Eliminar</button>
+        <button   type="button" class="btn btn-secondary btnsm-2 " style="margin-left: 30px;"  >Editar</button>
+    </div>
+    </div>
         </span>
  
 
-        <span class="card" style="width: 18rem;">
-            <img src="./assets/imagenes/camiseta2.webp" alt="" width="250" height="250">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-               
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">  Talla: S</li>
-                <li class="list-group-item"> Color:</li>
-                <li class="list-group-item">Precio</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Agregar</a>
-                <a href="#" class="card-link">Comprar</a>
-            </div>  
-        
-        </span>
-        <span class="card" style="width: 18rem;">
-            <img src="./assets/imagenes/camiseta3.webp" alt="" width="250" height="250">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-               
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">  Talla: S</li>
-                <li class="list-group-item"> Color:</li>
-                <li class="list-group-item">Precio</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Agregar</a>
-                <a href="#" class="card-link">Comprar</a>
-            </div>
-        
-        </span>
-        <span class="card" style="width: 18rem;">
-            <img src="./assets/imagenes/camiseta4.webp" alt="" width="250" height="250"> 
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                          </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item">  Talla: S</li>
-                <li class="list-group-item"> Color:</li>
-                <li class="list-group-item">Precio</li>
-                </ul>
-                <div class="card-body">
-                <a href="#" class="card-link">Agregar</a>
-                <a href="#" class="card-link">Comprar</a>
-                </div>
-            
-                 </span>
                  <!-- Aqui comienza la categoria de jeas-->
 <br>
 <br>
@@ -252,6 +205,8 @@
         <a href="#" class="card-link">Agregar</a>
         <a href="#" class="card-link">Comprar</a>
     </div>
+
+
 
 </span>
 

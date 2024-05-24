@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import{FormsModule, ReactiveFormsModule} from'@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +14,7 @@ import { ReportesComponent } from './administrador/reportes/reportes.component';
 import { NuevoProductoComponent } from './administrador/nuevo-producto/nuevo-producto.component';
 import { IventarioComponent } from './administrador/iventario/iventario.component';
 import { PedidosComponent } from './administrador/pedidos/pedidos.component';
+import { PermisosDirective } from './permisos.directive';
 
 
 @NgModule({
@@ -23,11 +27,19 @@ import { PedidosComponent } from './administrador/pedidos/pedidos.component';
     ReportesComponent,
     NuevoProductoComponent,
     IventarioComponent,
-    PedidosComponent
+    PedidosComponent,
+    PermisosDirective,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+  
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

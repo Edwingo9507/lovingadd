@@ -1,4 +1,10 @@
-body{
 
-    background-image: url(./assets/imagenes/fondo.jpg);
+@media(min-width:1080px){
+    body{
+
+        background-color: #e7eaee;
+        
+    }
+    
+
 }

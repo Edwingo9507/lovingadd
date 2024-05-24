@@ -6,7 +6,15 @@ object-position: center ;
 
 .carrito{
 
+ }
+
+ @media(min-width:1080px){
+
+  .carrito{
     position: relative;
 
-    left: 1200px;
+    left: 1080px;
+
+  }
+
  }

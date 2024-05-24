@@ -5,59 +5,46 @@
 
           
 <div class="cargar col-md-8 col-lg-6 col-xl-4 offset-xl-1"> 
-    <form>
+    <form [formGroup]="form" (ngSubmit)="addproducto()"   >
       <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
        
       <div class="card"><div class="form-outline mb-3">
         <h2> cargar nuevo producto</h2>
-        <input type="text" id="form3Example3" class="form-control form-control-lg"
-          placeholder="Nombre del producto" />
         <label class="form-label" for="form3Example3">Nombre producto</label>
+        <input formControlName="nombre" type="text" id="form3Example3" class="form-control form-control-lg"
+          placeholder="Nombre del producto" />
+        
       </div>
 
       <div class="form-outline mb-3">
-        <input type="text" id="form3Example4" class="form-control form-control-lg"
-          placeholder="Ref." />
-        <label class="form-label" for="form3Example4">Referencia del producto</label>
+        <label class="form-label" for="form3Example4">Talla:</label>
+        <input formControlName="talla" type="text" id="form3Example4" class="form-control form-control-lg"
+          placeholder="Talla" />
+       
       </div>
       
       <div class="form-outline mb-3">
-        <input type="text" id="form3Example4" class="form-control form-control-lg"
-          placeholder="descripcion" />
-        <label class="form-label" for="form3Example4">Descripcion del producto</label>
+        <label class="form-label" for="form3Example4">color</label>
+        <input formControlName="color" type="text" id="form3Example4" class="form-control form-control-lg"
+          placeholder="Color de la prenda" />
+    
       </div>
 
-      <div class="btn-group">
-        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Color
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <button class="dropdown-item" type="button">Negro</button>
-          <button class="dropdown-item" type="button">Blanco</button>
-          <button class="dropdown-item" type="button">Azul</button>
-          <button class="dropdown-item" type="button">Gris</button>
-        </div>
-      </div>
-
-
-      <div class="btn-group">
-        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Talla
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <button class="dropdown-item" type="button">XS</button>
-          <button class="dropdown-item" type="button">S</button>
-          <button class="dropdown-item" type="button">M</button>
-          <button class="dropdown-item" type="button">L</button>
-        </div>
-      </div>
-                <br>
-                <br>
       <div class="form-outline mb-3">
-        <input type="number" id="form3Example4" class="form-control form-control-lg"
-          placeholder="precio" />
         <label class="form-label" for="form3Example4">precio</label>
+        <input formControlName="precio" type="number" id="form3Example4" class="form-control form-control-lg"
+          placeholder="precio" />
+
       </div>
+      <div class="btn-group">
+
+      </div>
+
+
+     
+                <br>
+                <br>
+     
 
       <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile02">
@@ -65,9 +52,14 @@
       </div>
       
       <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">Cargar producto</button>
+        <button class="btn btn-primary" type="submit">Cargar producto</button>
       
       </div>
       
     </div>
   </div>
+
+
+
+
+  

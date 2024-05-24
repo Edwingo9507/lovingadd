@@ -20,14 +20,14 @@
     
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control form-control-lg"
+                <input type="text" [(ngModel)]="nombreusuario" name="nombreusuario" id="form3Example3" class="form-control form-control-lg"
                   placeholder="Usuario" />
                 <label class="form-label" for="form3Example3">Usuario</label>
               </div>
     
               <!-- Password input -->
               <div class="form-outline mb-3">
-                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                <input  type="text" [(ngModel)]="contrasena"  name="contrasena" id="form3Example4" class="form-control form-control-lg"
                   placeholder="Contaseña" />
                 <label class="form-label" for="form3Example4">contraseña</label>
               </div>
@@ -44,8 +44,8 @@
               </div>
               
               <div class="text-center text-lg-start mt-4 pt-2"> 
-               <a routerLink="/administrador" routerLinkActive="active-link" class=" btn btn-primary width: 33%">  <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button></a>
+  <button type="button" (click)="login()" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                 <p class="small fw-bold mt-2 pt-1 mb-0">No tienes usuario? <a href="#!"
                     class="link-danger">Registrar</a></p>
               </div>
@@ -56,10 +56,10 @@
         </div>
       </div>
       <div
-        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-1 px-3 px-xl-5 bg-primary mover ">
         <!-- Copyright -->
         <div class="text-white mb-3 mb-md-0">
-          Copyright © 2020. All rights reserved.
+          Copyright © 2023. All rights reserved.
         </div>
         <!-- Copyright -->
     
