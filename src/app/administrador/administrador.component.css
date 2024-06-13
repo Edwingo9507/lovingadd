@@ -1,26 +1,26 @@
-.card{
+.card {
 
     margin: 10px;
-    background-color:azure;
-    opacity: 95%;     
+    background-color: rgb(243, 247, 247);
+    opacity: 95%;
 
 }
 
-.card{
+.card {
 
-position: relative;
-left: 300px;
-
-}
-
-.list-group-item{
-background-color: azure;
-width: 300px;
-
+    position: relative;
+    left: 300px;
 
 }
 
-.botonmenu{
+.list-group-item {
+    background-color: rgb(246, 251, 251);
+    width: 300px;
+
+
+}
+
+.botonmenu {
     position: fixed;
     left: 0px;
     top: 200px;

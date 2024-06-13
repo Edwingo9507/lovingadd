@@ -1,0 +1,64 @@
+<form [formGroup]="register" (ngSubmit)="registrar()">
+    <div class="cargar col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+
+            <div class="card">
+                <div class="form-outline mb-3">
+                    <h2>Registrar Usuario</h2>
+                    <label class="form-label" for="form3Example3">Correo</label>
+                    <input formControlName="correo" type="text" id="form3Example3" class="form-control form-control-lg"
+                        placeholder="Correo Electronico" />
+
+                    <div *ngIf="register.get('correo')?.invalid && (register.get('correo')?.dirty||register.get('correo')?.touched) "
+                        class="text-danger mt-2  ">El campo es
+                        obligatorio
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Nombre usuario:</label>
+                    <input formControlName="usuario" type="text" id="form3Example4" class="form-control form-control-lg"
+                        placeholder="Nombre usuario" />
+                    <div *ngIf="register.get('usuario')?.invalid && (register.get('usuario')?.dirty||register.get('usuario')?.touched) "
+                        class="text-danger mt-2  ">El campo es
+                        obligatorio
+                    </div>
+                </div>
+
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Contraseña:</label>
+                    <input formControlName="contrasena" type="text" id="form3Example4"
+                        class="form-control form-control-lg" placeholder="Contraseña" />
+                    <div *ngIf="register.get('contrasena')?.invalid && (register.get('contrasena')?.dirty||register.get('contrasena')?.touched) "
+                        class="text-danger mt-2  ">El campo es
+                        obligatorio
+                    </div>
+                </div>
+
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Confirmar Contraseña</label>
+                    <input formControlName="confirmContrasena" type="text" id="form3Example4"
+                        class="form-control form-control-lg" placeholder="Confirmar contraseña" />
+
+                    <div *ngIf="register.get('confirmContrasena')?.invalid && (register.get('confirmContrasena')?.dirty||register.get('confirmContrasena')?.touched) "
+                        class="text-danger mt-2  ">El campo es
+                        obligatorio
+                    </div>
+                </div>
+                <div class="btn-group">
+                </div>
+                <br>
+                <br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-secondary btnsm-2" type="submit">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<button routerLink="/login" class="btn btn-secondary btnsm-2" type="submit">Volver</button>

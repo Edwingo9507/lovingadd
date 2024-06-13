@@ -1,10 +1,16 @@
-
-@media(min-width:1080px){
-    body{
+@media(max-width:1080px) {
+    body {
 
         background-color: #e7eaee;
-        
+
     }
-    
+}
+
+.card {
+
+    margin: 10px;
+    background-color: white;
+    opacity: 95%;
+    padding: 10%;
 
 }

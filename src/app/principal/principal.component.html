@@ -1,94 +1,99 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">LOVING ADD</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
+        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
         
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            Categorias
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Camisas</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Buzos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Jeans</a></li>
-          </ul>
-      
-      </ul>
-      <form class="d-flex">
-        <input class="form-control mr-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Camisas</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Buzos</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Jeans</a></li>
+                    </ul>
+                    
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control mr-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+            <button (click)="logOut()" type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+            </button>
+        </form>
     </div>
-  </nav>
-  <div class="carrito">
-    <button routerLink="/nuevoproducto" routerLinkActive="active-link" type="button"  displa class="btn btn-secondary">Agregar Producto</button>
+</nav> -->
+<app-navar></app-navar>
 
-    <a routerLink="/carrito" routerLinkActive="active-link" > <img src="assets/imagenes/car.png" alt=""  width="50" height="50"> </a>
-          
+<div class="carrito">
+    <button *ngIf="userRole=== 0" routerLink="/nuevoproducto" routerLinkActive="active-link" type="button" displa
+        class="btn btn-outline-secondary">Administrar</button>
+
+    <a routerLink="/carrito" routerLinkActive="active-link"> <img src="assets/imagenes/car.png" alt="" width="50"
+            height="50"> </a>
     </div>
 
-  <div> <h1 class="text-center" >Camisetas</h1></div>
-  
-    <span *ngFor="let item of listadeproductos ;let i=index" class="card" style="width: 18rem ">
-    <img src="./assets/imagenes/camiseta1.webp" alt="" width="200" height="250"> 
-        <div class="card-body"  class="card-title"  >
-            <div *ngIf="i === 0" class="card"> 
-            </div>   
-            <h5>{{item.nombre}}</h5>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item" >Talla:{{item.talla}} </li>
+<div>
+    <h1 class="text-center">Camisetas</h1>
+</div>
+<span *ngFor="let item of listadeproductos ;let i=index" class="productCard" style="width: 18rem ">
+    <div><img class="imagen" src="./assets/imagenes/camiseta1.webp" alt="" width="200" height="250"></div>
+    <div class="card-body" class="card-title">
+    </div>
+    <h5 style="padding: 10%;">{{item.nombre}}</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Talla:{{item.talla}} </li>
         <li class="list-group-item">Color:{{item.color}}</li>
         <li class="list-group-item">Precio:{{item.precio}}</li>
-        </ul>
-        <div class="card-body">
-        <button  (click)="eliminarProducto(item.id!)" type="button" class="btn btn-secondary btnsm-2">Eliminar</button>
-        <button   type="button" class="btn btn-secondary btnsm-2 " style="margin-left: 30px;"  >Editar</button>
-    </div>
-    </div>
-        </span>
- 
-
-                 <!-- Aqui comienza la categoria de jeas-->
-<br>
-<br>
-
-<div> <h1 class="text-center">Jeans</h1></div>
-
-<span class="card" style="width: 18rem;">
-    <img src="./assets/imagenes/jean1.webp" alt="" width="250" height="250">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-         
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
-        <li class="list-group-item"> Color:</li>
-        <li class="list-group-item">Precio</li>
     </ul>
-    <div class="card-body">
-        <a href="#" class="card-link">Agregar</a>
-        <a href="#" class="card-link">Comprar</a>
+    <div *ngIf="user && userRole === 1 || userRole === null " class="card-body">
+        <a href="#" routerLink="/login" class="btn btn-outline-secondary ">Agregar</a>
+        <a href="#" routerLink="/login" class="btn btn-outline-secondary  ">Comprar</a>
     </div>
+    <div class="card-body">
+        <div *ngIf="userRole === 0">
+            <button routerLink="/edit/  {{item.id}}" type="button" class="btn btn-outline-secondary "
+                style="margin-left: 0px;">Editar</button>
+            <button (click)="eliminarProducto(item.id!)" type="button" class="btn btn-outline-secondary"
+                style="margin-left: 20px">Eliminar</button>
+        
+        </div>
 
+    </div>
 </span>
-<span class="card" style="width: 18rem;">
+
+
+<!-- Aqui comienza la categoria de jeas-->
+<br>
+<br>
+
+<div>
+    <h1 class="text-center">Jeans</h1>
+</div>
+
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/jean2.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -98,14 +103,14 @@
     </div>
 
 </span>
-<span class="card" style="width: 18rem;">
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/jean3.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -115,14 +120,14 @@
     </div>
 
 </span>
-<span class="card" style="width: 18rem;">
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/jean4.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -137,16 +142,18 @@
 <br>
 <br>
 
-<div> <h1 class="text-center">Buzos</h1></div>
+<div>
+    <h1 class="text-center">Buzos</h1>
+</div>
 
-<span class="card" style="width: 18rem;">
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/buzo1.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -156,14 +163,14 @@
     </div>
 
 </span>
-<span class="card" style="width: 18rem;">
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/buzo2.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -173,14 +180,14 @@
     </div>
 
 </span>
-<span class="card" style="width: 18rem;">
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/buzo3.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -190,14 +197,14 @@
     </div>
 
 </span>
-<span class="card" style="width: 18rem;">
+<span class="productCard" style="width: 18rem;">
     <img src="./assets/imagenes/buzo4.webp" alt="" width="250" height="250">
     <div class="card-body">
         <h5 class="card-title">Card title</h5>
-         
+
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">  Talla: S</li>
+        <li class="list-group-item"> Talla: S</li>
         <li class="list-group-item"> Color:</li>
         <li class="list-group-item">Precio</li>
     </ul>
@@ -209,4 +216,3 @@
 
 
 </span>
-

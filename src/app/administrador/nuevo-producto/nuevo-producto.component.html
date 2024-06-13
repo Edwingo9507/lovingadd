@@ -1,65 +1,67 @@
-
 <app-administrador></app-administrador>
-
 <!---cargar nuevos productos-->
 
+<div class="cargar col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+  <form [formGroup]="form" (ngSubmit)="addproducto()">
+    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+
+      <div class="card">
+        <div class="form-outline mb-3">
+          <h2> {{operacion}} producto </h2>
+          <label class="form-label" for="form3Example3">Nombre producto</label>
+          <input formControlName="nombre" type="text" id="form3Example3" class="form-control form-control-lg"
+            placeholder="Nombre del producto" />
+
+            <div *ngIf="form.get('nombre')?.invalid && (form.get('nombre')?.dirty||form.get('nombre')?.touched) "
+              class="text-danger mt-2  ">El nombre es
+              obligatorio
+            </div>
+        </div>
+
+        <div class="form-outline mb-3">
+          <label class="form-label" for="form3Example4">Talla:</label>
+          <input formControlName="talla" type="text" id="form3Example4" class="form-control form-control-lg"
+            placeholder="Talla" />
+            <div *ngIf="form.get('talla')?.invalid && (form.get('talla')?.dirty||form.get('talla')?.touched) "
+              class="text-danger mt-2  ">El campo es obligatorio
+            </div>
+            </div>
+            
+            <div class="form-outline mb-3">
+              <label class="form-label" for="form3Example4">color</label>
+              <input formControlName="color" type="text" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Color de la prenda" />
+            <div *ngIf="form.get('color')?.invalid && (form.get('color')?.dirty||form.get('color')?.touched) "
+              class="text-danger mt-2  ">El campo es
+              obligatorio
+            </div>
+            </div>
+
+        <div class="form-outline mb-3">
+          <label class="form-label" for="form3Example4">precio</label>
+          <input formControlName="precio" type="number" id="form3Example4" class="form-control form-control-lg"
+            placeholder="precio" />
+            <div *ngIf="form.get('precio')?.invalid && (form.get('precio')?.dirty||form.get('precio')?.touched) "
+              class="text-danger mt-2  "> Valor no es numerico
+            </div>
+
+        </div>
+        <div class="btn-group">
+
+        </div>
+        <br>
+        <br>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+            <label class="input-group-text" for="inputGroupFile02">Cargar imagen</label>
+          </div>
           
-<div class="cargar col-md-8 col-lg-6 col-xl-4 offset-xl-1"> 
-    <form [formGroup]="form" (ngSubmit)="addproducto()"   >
-      <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-       
-      <div class="card"><div class="form-outline mb-3">
-        <h2> cargar nuevo producto</h2>
-        <label class="form-label" for="form3Example3">Nombre producto</label>
-        <input formControlName="nombre" type="text" id="form3Example3" class="form-control form-control-lg"
-          placeholder="Nombre del producto" />
-        
-      </div>
+          <div class="d-grid gap-2">
+          <button class="btn btn-secondary btnsm-2" type="submit">Cargar producto</button>
+          
+          </div>
+          
+          </div>
+          </div>
 
-      <div class="form-outline mb-3">
-        <label class="form-label" for="form3Example4">Talla:</label>
-        <input formControlName="talla" type="text" id="form3Example4" class="form-control form-control-lg"
-          placeholder="Talla" />
-       
-      </div>
-      
-      <div class="form-outline mb-3">
-        <label class="form-label" for="form3Example4">color</label>
-        <input formControlName="color" type="text" id="form3Example4" class="form-control form-control-lg"
-          placeholder="Color de la prenda" />
-    
-      </div>
-
-      <div class="form-outline mb-3">
-        <label class="form-label" for="form3Example4">precio</label>
-        <input formControlName="precio" type="number" id="form3Example4" class="form-control form-control-lg"
-          placeholder="precio" />
-
-      </div>
-      <div class="btn-group">
-
-      </div>
-
-
-     
-                <br>
-                <br>
-     
-
-      <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputGroupFile02">
-        <label class="input-group-text" for="inputGroupFile02">Cargar imagen</label>
-      </div>
-      
-      <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="submit">Cargar producto</button>
-      
-      </div>
-      
-    </div>
-  </div>
-
-
-
-
-  
+</form>

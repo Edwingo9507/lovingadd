@@ -1,12 +1,35 @@
-.fondo{
+.fondo {
 
     background-color: grey;
 
-    
- }
 
-.mover{
+}
+
+.mover {
 
     margin-top: 250px;
 }
 
+.singin {
+    display: flex;
+    justify-content: center;
+}
+
+.login-img {
+
+
+    width: 130px;
+}
+
+.caja {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.derechos {
+
+    position: absolute;
+    bottom: 100px;
+
+}

@@ -1,8 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+////////////////////////////////////////////////////////////////
+import { Component, numberAttribute, OnInit } from '@angular/core';
 import { User } from '../interfaces/users';
 import { UsuariosService } from '../services/usuarios.service';
 import { Router } from '@angular/router';
-
+import { Token } from '@angular/compiler';
+import { ProductService } from '../services/produto.services';
+//import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,34 +17,50 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-nombreusuario:string='';
-contrasena:string='';
+  nombreusuario: string = '';
+  contrasena: string = '';
 
-  constructor(private _usuarios:UsuariosService,
-    private router:Router) { }
+
+  constructor(private _usuariosServices: UsuariosService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    // Initialization tasks can go here
   }
 
-  login(){
+  login(): void {
+    //validacion de datos
 
-    const user:User={
-
-      nombreusuario:this.nombreusuario,
-      contrasena:this.contrasena,
+    if (this.nombreusuario == '' || this.contrasena == "") {
+      //this.toastr.error('Datos obligatorios', 'error');
+      return
     }
+    const user: User = {
+      nombreusuario: this.nombreusuario,
+      contrasena: this.contrasena,
+      role: null,
+      correo: null,
+    };
 
-    this._usuarios.login(user).subscribe({
-      next:(token)=>{
+    this._usuariosServices.login(user).subscribe({
+      next: (Response: any) => {
+        this._usuariosServices.saveLocalUser(Response.user.role);
+        localStorage.setItem('token', Response.token)
+        this.router.navigate(['/principal'])
+      },
+      error: (e: HttpErrorResponse) => {
 
-      this.router.navigate(['/principal'])
-      localStorage.setItem('token',token)
-        
+        console.log(e)
+        alert(`Error: ${e.error.msg}`);
       }
-    })
+    });
+
+
+
 
 
   }
+
+
+
 
 }

@@ -37,6 +37,17 @@ guardarProductos(producto:Producto):Observable<void>{
  return this.http.post<void>(`${this.myappUrl}${this.myapiUrl}`,producto)
 
 }
+    
+    getProduct(id:number):Observable<Producto>{
+
+return this.http.get<Producto>(`${this.myappUrl}${this.myapiUrl}${id}`)
+    }
+
+    updateProduct(id: number, producto: Producto): Observable<void> {
+        
+    return this.http.put<void>(`${this.myappUrl}${this.myapiUrl}${id}`,producto)
+    
+}
 
 
 }

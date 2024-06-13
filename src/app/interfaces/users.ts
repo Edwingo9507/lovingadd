@@ -1,5 +1,11 @@
-export interface User{
+export interface User {
 
-    nombreusuario:string,
-    contrasena:string,
+    nombreusuario: string,
+    contrasena: string,
+    role: number | null,
+    correo: null
+
+
+
 }
+

@@ -8,16 +8,21 @@ import { NuevoProductoComponent } from './administrador/nuevo-producto/nuevo-pro
 import { ReportesComponent } from './administrador/reportes/reportes.component';
 import { PedidosComponent } from './administrador/pedidos/pedidos.component';
 import { IventarioComponent } from './administrador/iventario/iventario.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 const routes: Routes = [
 
-  {path: 'principal',component: PrincipalComponent },
-  {path: '',component: LoginComponent },
-  {path: 'carrito', component: CarritoComponent},
-  {path:'administrador',component:AdministradorComponent},
-  {path:'nuevoproducto',component:NuevoProductoComponent},
-  {path:'reportes',component:ReportesComponent},
-  {path:'pedidos',component:PedidosComponent},
-  {path:'inventario',component:IventarioComponent}
+  { path: 'principal', component: PrincipalComponent },
+  { path: '', component: PrincipalComponent },
+  { path: 'carrito', component: CarritoComponent },
+  { path: 'administrador', component: AdministradorComponent },
+  { path: 'nuevoproducto', component: NuevoProductoComponent },
+  { path: 'reportes', component: ReportesComponent },
+  { path: 'pedidos', component: PedidosComponent },
+  { path: 'inventario', component: IventarioComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registrar', component: RegistrarComponent },
+  { path: 'edit/:id', component: NuevoProductoComponent  },
+
 ];
 
 @NgModule({
